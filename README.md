@@ -1,12 +1,14 @@
 # Sobre el Proyecto 
 En este repositorio ire haciendo las entregas que seran la migración y adaptación del proyecto final del curso de JS.
 Para mas info sobre el mismo dejare links debajo.
+<br>
 Link del repositorio del proyecto final de JS: https://github.com/RamiroStrologo/3raPreEntrega_StrologoRamiro_47050
+<br>
 Link del github pages del proyecto final de JS: https://ramirostrologo.github.io/3raPreEntrega_StrologoRamiro_47050/
 # Sobre el Sitio
 El sitio de Dark Games es una pagina que representa a un local fisico de venta de Videjo juegos y reparacion de consolas. 
 En la pagina los usuarios podran ver todos los productos que se ofrecen, su precio y su descripción.
-#Comentarios para el profesor / Tutor corrector
+# Comentarios para el profesor / Tutor corrector
 Sin comentarios por ahora.
 # Tecnologias, frameworks, librerias y lenguajes utilizados
 -NODE.js <br>
