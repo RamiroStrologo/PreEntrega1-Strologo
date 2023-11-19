@@ -2,7 +2,7 @@
   "ps3": [
     {
       "id": "8a3Aga7JJgE",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/the-last-of-us-ps3.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/the-last-of-us-ps3.webp",
       "titulo": "The Last of Us",
       "genero": "Acción y aventura",
       "precio": "$6000",
@@ -10,7 +10,7 @@
     },
     {
       "id": "QkkoHAzjnUs",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/gta-v-ps3.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/gta-v-ps3.webp",
       "titulo": "GTA V",
       "genero": "Mundo abierto, acción",
       "precio": "$5500",
@@ -18,7 +18,7 @@
     },
     {
       "id": "JSRtYpNRoN0",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/the-elder-scrolls-v-skyrim-ps3.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/the-elder-scrolls-v-skyrim-ps3.webp",
       "titulo": "The Elder Scrolls V: Skyrim",
       "genero": "RPG de mundo abierto",
       "precio": "$4500",
@@ -26,7 +26,7 @@
     },
     {
       "id": "-D_KcctdR0M",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/battlefield-4-ps3.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/battlefield-4-ps3.webp",
       "titulo": "Battlefield 4",
       "genero": "Shooter en primera persona",
       "precio": "$4000",
@@ -34,7 +34,7 @@
     },
     {
       "id": "U6uyuIQYlfY",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/dark-souls-ii.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/dark-souls-ii.webp",
       "titulo": "Dark Souls II",
       "genero": "Acción y rol",
       "precio": "$5000",
@@ -42,7 +42,7 @@
     },
     {
       "id": "ctQl9wa3ydE",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/dead-space-ps3.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/dead-space-ps3.webp",
       "titulo": "Dead Space",
       "genero": "Survival horror",
       "precio": "$3500",
@@ -50,7 +50,7 @@
     },
     {
       "id": "EMCkbDnaTDM",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/metal-gear-rising-revengeance-ps3.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/metal-gear-rising-revengeance-ps3.webp",
       "titulo": "Metal Gear Rising: Revengeance",
       "genero": "Acción y hack and slash",
       "precio": "$3000",
@@ -58,7 +58,7 @@
     },
     {
       "id": "ajxQ4dUvrqk",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/god-of-war-ascension-ps3.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/god-of-war-ascension-ps3.webp",
       "titulo": "God of War: Ascension",
       "genero": "Acción y aventura",
       "precio": "$4200",
@@ -66,7 +66,7 @@
     },
     {
       "id": "czFv7F_3HUE",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/metal-gear-solid-4-guns-of-the-patriots-ps3.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/metal-gear-solid-4-guns-of-the-patriots-ps3.webp",
       "titulo": "Metal Gear Solid 4: Guns of the Patriots",
       "genero": "Acción y sigilo",
       "precio": "$3800",
@@ -74,7 +74,7 @@
     },
     {
       "id": "D6ouHWP0KrY",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/need-for-speed-hot-pursuit-ps3.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/need-for-speed-hot-pursuit-ps3.webp",
       "titulo": "Need for Speed: Hot Pursuit",
       "genero": "Carreras y mundo abierto",
       "precio": "$3000",
@@ -82,7 +82,7 @@
     },
     {
       "id": "kJDYCVV",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/far-cry-4-_1_.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/far-cry-4-_1_.webp",
       "titulo": "Far Cry 4",
       "genero": "Mundo abierto, disparos",
       "precio": "$4200",
@@ -90,7 +90,7 @@
     },
     {
       "id": "93FHnpQ8uz0",
-      "imagenSrc": "/img/pages/tienda/card/PortadasPS3/silent-hill-downpour-_1_.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS3/silent-hill-downpour-_1_.webp",
       "titulo": "Silent Hill: Downpour",
       "genero": "Survival horror",
       "precio": "$2800",
@@ -100,7 +100,7 @@
   "logoPS3": [
     {
       "consola": "btnPS3",
-      "imgSepSrc": "./assets/images/nav_icos/ps-logo-ico.svg",
+      "imgSepSrc": "/img/pages/tienda/ps-logo-ico.svg",
       "txtSep": "Juegos de PS3",
       "altImgSep": "IconoPS"
     }
@@ -108,7 +108,7 @@
   "ps4": [
     {
       "id": "CCum266l1vY",
-      "imagenSrc": "./assets/images/webP/portadasPS4/crash-bandicoot-4-its-about-time-ps4.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/crash-bandicoot-4-its-about-time-ps4.webp",
       "titulo": "Crash Bandicoot 4: It's About Time",
       "genero": "Plataforma",
       "precio": "$7000",
@@ -116,7 +116,7 @@
     },
     {
       "id": "jG2QDcqtLmE",
-      "imagenSrc": "./assets/images/webP/portadasPS4/cyberpunk-2077-ps4.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/cyberpunk-2077-ps4.webp",
       "titulo": "Cyberpunk 2077",
       "genero": "RPG de acción",
       "precio": "$8000",
@@ -124,7 +124,7 @@
     },
     {
       "id": "TmZ5MTIu5hU",
-      "imagenSrc": "./assets/images/webP/portadasPS4/bloodborne-ps4.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/bloodborne-ps4.webp",
       "titulo": "Bloodborne",
       "genero": "Acción de rol",
       "precio": "$8000",
@@ -132,7 +132,7 @@
     },
     {
       "id": "S6GTl_vPRvU",
-      "imagenSrc": "./assets/images/webP/portadasPS4/hogwarts-legacy-ps4.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/hogwarts-legacy-ps4.webp",
       "titulo": "Hogwarts Legacy",
       "genero": "RPG de mundo abierto",
       "precio": "$8000",
@@ -140,7 +140,7 @@
     },
     {
       "id": "HCL2NwiRsAg",
-      "imagenSrc": "./assets/images/webP/portadasPS4/resident-evil-village-ps4.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/resident-evil-village-ps4.webp",
       "titulo": "Resident Evil Village",
       "genero": "Survival horror",
       "precio": "$8000",
@@ -148,7 +148,7 @@
     },
     {
       "id": "fLGa3SBxfCk",
-      "imagenSrc": "./assets/images/webP/portadasPS4/nioh-ps4.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/nioh-ps4.webp",
       "titulo": "Nioh",
       "genero": "Acción y rol",
       "precio": "$5000",
@@ -156,7 +156,7 @@
     },
     {
       "id": "2nj9Ub32ILs",
-      "imagenSrc": "./assets/images/webP/portadasPS4/death-stranding-ps4.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/death-stranding-ps4.webp",
       "titulo": "Death Stranding",
       "genero": "Acción y exploración",
       "precio": "$8000",
@@ -164,7 +164,7 @@
     },
     {
       "id": "RO90omga8D4",
-      "imagenSrc": "./assets/images/webP/portadasPS4/doom-ps4.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/doom-ps4.webp",
       "titulo": "DOOM",
       "genero": "Acción y disparos",
       "precio": "$8000",
@@ -172,7 +172,7 @@
     },
     {
       "id": "ea_ULGbQTg0",
-      "imagenSrc": "./assets/images/webP/portadasPS4/prey-ps4.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/prey-ps4.webp",
       "titulo": "Prey",
       "genero": "Acción y suspense",
       "precio": "$8000",
@@ -180,7 +180,7 @@
     },
     {
       "id": "OT8if6DXOFQ",
-      "imagenSrc": "./assets/images/webP/portadasPS4/elden-ring.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/elden-ring.webp",
       "titulo": "Elden Ring",
       "genero": "Acción de mundo abierto",
       "precio": "$8000",
@@ -188,7 +188,7 @@
     },
     {
       "id": "kTSh7aHfb5Q",
-      "imagenSrc": "./assets/images/webP/portadasPS4/call-of-duty-black-ops-cold-war-ps4.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/call-of-duty-black-ops-cold-war-ps4.webp",
       "titulo": "Call of Duty: Black Ops Cold War",
       "genero": "Shooter de acción",
       "precio": "$8000",
@@ -196,7 +196,7 @@
     },
     {
       "id": "VVX7DRyjE60",
-      "imagenSrc": "./assets/images/webP/portadasPS4/assassins-creed-valhalla-ps4.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasPS4/assassins-creed-valhalla-ps4.webp",
       "titulo": "Assassin's Creed Valhalla",
       "genero": "Acción y aventura",
       "precio": "$8000",
@@ -206,7 +206,7 @@
   "logoPS4": [
     {
       "consola": "btnPS4",
-      "imgSepSrc": "./assets/images/nav_icos/ps-logo-ico.svg",
+      "imgSepSrc": "/img/pages/tienda/ps-logo-ico.svg",
       "txtSep": "Juegos de PS4",
       "altImgSep": "IconoPS"
     }
@@ -214,7 +214,7 @@
   "xone": [
     {
       "id": "ruY1eT9bXiw",
-      "imagenSrc": "./assets/images/webP/portadasXONE/quantum-break-xone.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/quantum-break-xone.webp",
       "titulo": "Quantum Break",
       "genero": "Acción y aventura",
       "precio": "$8000",
@@ -222,7 +222,7 @@
     },
     {
       "id": "Asy_p4xStbk",
-      "imagenSrc": "./assets/images/webP/portadasXONE/assassins-creed-odyssey-xone.jpg",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/assassins-creed-odyssey-xone.jpg",
       "titulo": "Assassin's Creed Odyssey",
       "genero": "Mundo abierto, acción",
       "precio": "$8000",
@@ -230,7 +230,7 @@
     },
     {
       "id": "jt8Nx2Hm7Y4",
-      "imagenSrc": "./assets/images/webP/portadasXONE/battlefield-1-xone.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/battlefield-1-xone.webp",
       "titulo": "Battlefield 1",
       "genero": "Shooter en primera persona",
       "precio": "$8000",
@@ -238,7 +238,7 @@
     },
     {
       "id": "qAUYNIDEJ6o",
-      "imagenSrc": "./assets/images/webP/portadasXONE/call-of-duty-black-ops-iii-xone.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/call-of-duty-black-ops-iii-xone.webp",
       "titulo": "Call of Duty: Black Ops III",
       "genero": "Shooter en primera persona",
       "precio": "$8000",
@@ -246,7 +246,7 @@
     },
     {
       "id": "QkkoHAzjnUs",
-      "imagenSrc": "./assets/images/webP/portadasXONE/grand-theft-auto-v-xone.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/grand-theft-auto-v-xone.webp",
       "titulo": "Grand Theft Auto V",
       "genero": "Mundo abierto, acción",
       "precio": "$8000",
@@ -254,7 +254,7 @@
     },
     {
       "id": "K_q398Qx6I",
-      "imagenSrc": "./assets/images/webP/portadasXONE/the-witcher-3-wild-hunt-xone.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/the-witcher-3-wild-hunt-xone.webp",
       "titulo": "The Witcher 3: Wild Hunt",
       "genero": "RPG de mundo abierto",
       "precio": "$8000",
@@ -262,7 +262,7 @@
     },
     {
       "id": "YLcjfALaQh0",
-      "imagenSrc": "./assets/images/webP/portadasXONE/forza-motorsport-5-xone.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/forza-motorsport-5-xone.webp",
       "titulo": "Forza Motorsport 5",
       "genero": "Carreras, automovilismo",
       "precio": "$8000",
@@ -270,7 +270,7 @@
     },
     {
       "id": "cWBwFhUv1-8",
-      "imagenSrc": "./assets/images/webP/portadasXONE/dark-souls-iii-xone.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/dark-souls-iii-xone.webp",
       "titulo": "Dark Souls III",
       "genero": "Acción y rol",
       "precio": "$8000",
@@ -278,7 +278,7 @@
     },
     {
       "id": "hr1G31fMVRI",
-      "imagenSrc": "./assets/images/webP/portadasXONE/gears-of-war-ultimate-edition-xone.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/gears-of-war-ultimate-edition-xone.webp",
       "titulo": "Gears of War Ultimate Edition",
       "genero": "Shooter en tercera persona, acción",
       "precio": "$8000",
@@ -286,7 +286,7 @@
     },
     {
       "id": "wfOjRzWgVKo",
-      "imagenSrc": "./assets/images/webP/portadasXONE/star-wars-battlefront-xone.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/star-wars-battlefront-xone.webp",
       "titulo": "Star Wars: Battlefront",
       "genero": "Acción y disparos",
       "precio": "$8000",
@@ -294,7 +294,7 @@
     },
     {
       "id": "H2qITQHud2I",
-      "imagenSrc": "./assets/images/webP/portadasXONE/the-evil-within-xone.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/the-evil-within-xone.webp",
       "titulo": "The Evil Within",
       "genero": "Survival horror",
       "precio": "$8000",
@@ -302,7 +302,7 @@
     },
     {
       "id": "QNO9n9TthZg",
-      "imagenSrc": "./assets/images/webP/portadasXONE/ryse-son-of-rome-xone.webp",
+      "imagenSrc": "/img/pages/tienda/card/portadasXONE/ryse-son-of-rome-xone.webp",
       "titulo": "Ryse: Son of Rome",
       "genero": "Combate, acción, aventura",
       "precio": "$8000",
@@ -312,7 +312,7 @@
   "logoXONE": [
     {
       "consola": "btnXONE",
-      "imgSepSrc": "./assets/images/nav_icos/xbox-logo-ico.svg",
+      "imgSepSrc": "/img/pages/tienda/xbox-logo-ico.svg",
       "txtSep": "Juegos de Xbox One",
       "altImgSep": "IconoXbox"
     }

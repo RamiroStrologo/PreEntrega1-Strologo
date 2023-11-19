@@ -11,12 +11,19 @@
 }
 .cardItem p {
   display: none;
-}
-.cardItem:hover {
   word-wrap: break-word;
   white-space: pre-wrap;
+}
+.cardItem:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #e0e1dd;
+  transition: transform 0.8s, box-shadow 0.5s;
+  position: sticky;
+  z-index: 1;
+}
+.cardItem:hover p {
   margin-left: 10px;
-  display: inline;
+  display: block;
   font-size: small;
 }
 .cardItem img {

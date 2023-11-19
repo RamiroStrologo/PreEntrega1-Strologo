@@ -1,16 +1,13 @@
 import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
-import Index from "./components/pages/main/Main";
-import Tienda from "./components/pages/tienda/Tienda";
-import ItemListContainer from "./components/itemListContainer/ItemListContainer/";
+import Main from "./views/Home/Main";
+import Tienda from "./views/Tienda/Tienda";
+import RouterPirncipal from "./routers/RouterPrincipal";
 
 function App() {
   return (
     <>
-      <Header />
-      <Tienda />
-      {/* <Index /> */}
-      <Footer />
+      <RouterPirncipal />
     </>
   );
 }

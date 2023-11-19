@@ -1,0 +1,12 @@
+.separador {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #1b263b;
+  width: 100%;
+  border: 0.5px solid #1b263b;
+  margin-top: 10px;
+}
+.separador img {
+  width: 40px;
+  height: 40px;
+}

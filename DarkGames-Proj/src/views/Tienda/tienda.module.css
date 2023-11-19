@@ -1,0 +1,11 @@
+.tienda {
+  display: grid;
+  grid-template-areas: "asideNav" "itemList itemList";
+  grid-template-columns: 0.075fr 1fr;
+}
+.tienda .asideNavBar {
+  grid-area: asideNav;
+}
+.tienda .itemList {
+  grid-area: itemList;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { main } from "./main.module.css";
-export default function Index() {
+import { NavLink } from "react-router-dom";
+export default function Main() {
   return (
     <main className={main}>
       <div data-id="divTitle">
@@ -8,17 +9,17 @@ export default function Index() {
       </div>
       <section>
         <div data-id="div_index_linkA">
-          <a>
+          <NavLink to="/tienda/ps4">
             <img src="/img/pages/main/ps-logo-ico.svg" alt="icono de tienda" />
-          </a>
+          </NavLink>
         </div>
         <div data-id="div_index_linkB">
-          <a>
+          <NavLink to="/tienda/xone">
             <img
               src="/img/pages/main/xbox-logo-ico.svg"
               alt="icono de tienda"
             />
-          </a>
+          </NavLink>
         </div>
       </section>
     </main>

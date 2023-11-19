@@ -5,13 +5,12 @@
 .asideNavBar nav {
   position: fixed;
   left: 0;
-  height: 100vh;
   background-color: #415a77;
 }
 .asideNavBar ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   height: auto;
   width: 100%;
@@ -23,13 +22,12 @@
   list-style: none;
   text-align: center;
 }
-.asideNavBar ul li button {
+.asideNavBar ul li a {
   height: 100%;
   width: 100%;
-  padding: 10px;
   background-color: #415a77;
 }
-.asideNavBar ul li button img {
+.asideNavBar ul li a img {
   width: 30px;
   height: 30px;
 }

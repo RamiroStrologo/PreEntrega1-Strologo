@@ -1,0 +1,9 @@
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #1b263b;
+}
+.summary div {
+  background-color: #1b263b;
+}
