@@ -1,0 +1,14 @@
+.detallesCont {
+  background-color: #0d1b2a;
+  display: flex;
+  justify-content: space-evenly;
+}
+.detallesCont div {
+  display: flex;
+  align-self: flex-start;
+}
+.detallesCont aside {
+  display: flex;
+  justify-content: center;
+  background-color: #1b263b;
+}

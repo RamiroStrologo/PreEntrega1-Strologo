@@ -1,9 +1,7 @@
 .summary {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: #1b263b;
-}
-.summary div {
   background-color: #1b263b;
 }

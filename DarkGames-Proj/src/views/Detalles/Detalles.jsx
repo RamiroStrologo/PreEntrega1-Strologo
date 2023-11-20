@@ -3,6 +3,7 @@ import Summary from "../../components/pages/detalles_comps/summary/Summary";
 import CardItem from "../../components/pages/tienda_comps/itemList/cardItem/CardItem";
 import { useParams } from "react-router-dom";
 import getGameById from "./detallesJs.js";
+import { detallesCont } from "./detalles.module.css";
 
 export default function Detalles({
   id,
@@ -21,13 +22,21 @@ export default function Detalles({
   }, [gameId]);
 
   return (
-    <div>
-      <CardItem
-        imagenSrc={detalles.imagenSrc}
-        titulo={detalles.titulo}
-        genero={detalles.genero}
-        precio={detalles.precio}
-      />
+    <div className={detallesCont}>
+      <div>
+        <img src="/img/pages/detalles/back_ico.svg" alt="Icono de volver" />
+      </div>
+      <aside>
+        <CardItem
+          imagenSrc={detalles.imagenSrc}
+          titulo={detalles.titulo}
+          genero={detalles.genero}
+          precio={detalles.precio}
+          vistaDetalles={true}
+          className="detailsView"
+        />
+      </aside>
+
       <Summary titulo={detalles.titulo} descripcion={detalles.descripcion} />
     </div>
   );

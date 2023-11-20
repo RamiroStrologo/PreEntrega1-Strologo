@@ -30,3 +30,8 @@
   width: 200px;
   height: 300px;
 }
+
+.detailsView img {
+  height: 500px;
+  width: 380px;
+}

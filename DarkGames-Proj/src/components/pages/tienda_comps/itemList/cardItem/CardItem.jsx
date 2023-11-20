@@ -2,7 +2,14 @@ import React from "react";
 import { cardItem } from "./cardItem.module.css";
 import { useNavigate } from "react-router-dom";
 
-export default function CardItem({ id, imagenSrc, titulo, genero, precio }) {
+export default function CardItem({
+  id,
+  imagenSrc,
+  titulo,
+  genero,
+  precio,
+  vistaDetalles,
+}) {
   const navigate = useNavigate();
   const handleImgClick = () => {
     navigate(`/tienda/detalles/${id}`);
