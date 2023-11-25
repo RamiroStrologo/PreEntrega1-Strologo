@@ -4,6 +4,7 @@ import CardItem from "../../components/pages/tienda_comps/itemList/cardItem/Card
 import { useParams } from "react-router-dom";
 import getGameById from "./detallesJs.js";
 import { detallesCont } from "./detalles.module.css";
+import Iframe from "../../components/pages/detalles_comps/iframe/Iframe.jsx";
 
 export default function Detalles({
   id,
@@ -36,8 +37,10 @@ export default function Detalles({
           className="detailsView"
         />
       </aside>
-
-      <Summary titulo={detalles.titulo} descripcion={detalles.descripcion} />
+      <section>
+        <Summary titulo={detalles.titulo} descripcion={detalles.descripcion} />
+        <Iframe id={gameId} />
+      </section>
     </div>
   );
 }

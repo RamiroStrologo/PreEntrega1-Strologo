@@ -9,24 +9,24 @@
   transition: transform 0.3s, box-shadow 0.3s;
   transform-origin: center;
 }
-.cardItem p {
+.storeView p {
   display: none;
   word-wrap: break-word;
   white-space: pre-wrap;
 }
-.cardItem:hover {
+.storeView:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px #e0e1dd;
   transition: transform 0.8s, box-shadow 0.5s;
   position: sticky;
   z-index: 1;
 }
-.cardItem:hover p {
+.storeView:hover p {
   margin-left: 10px;
   display: block;
   font-size: small;
 }
-.cardItem img {
+.storeView img {
   width: 200px;
   height: 300px;
 }

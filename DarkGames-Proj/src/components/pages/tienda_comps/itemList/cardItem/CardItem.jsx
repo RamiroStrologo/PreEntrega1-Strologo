@@ -1,5 +1,5 @@
 import React from "react";
-import { cardItem } from "./cardItem.module.css";
+import { cardItem, detailsView, storeView } from "./cardItem.module.css";
 import { useNavigate } from "react-router-dom";
 
 export default function CardItem({
@@ -15,7 +15,10 @@ export default function CardItem({
     navigate(`/tienda/detalles/${id}`);
   };
   return (
-    <div className={cardItem} onClick={handleImgClick}>
+    <div
+      className={`${cardItem} ${!vistaDetalles ? storeView : detailsView}`}
+      onClick={handleImgClick}
+    >
       <img src={imagenSrc} alt={titulo} />
       <p>
         {`Género: ${genero}`} <br /> <br /> {`Precio: ${precio}`} <br />

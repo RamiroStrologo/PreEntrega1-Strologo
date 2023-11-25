@@ -12,7 +12,7 @@ export default function ItemList({ products, consolaInfo }) {
       />
       <div data-id="contCards">
         {products.map((prod) => (
-          <CardItem key={prod.id} {...prod} />
+          <CardItem key={prod.id} {...prod} vistaDetalles={false} />
         ))}
       </div>
     </section>

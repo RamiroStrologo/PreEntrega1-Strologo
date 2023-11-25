@@ -1,9 +1,12 @@
+import axios from "axios";
+
 export default async function getGameById(gameId) {
-  const gamesFetch = await fetch("/json/videojuegos.json");
-  const data = await gamesFetch.json();
+  const gamesFetch = await axios.get("/json/videojuegos.json");
   let foundGame = [];
-  Object.keys(data).forEach((consoleKey) => {
-    const game = data[consoleKey].find((game) => game.id === gameId.gameId);
+  Object.keys(gamesFetch.data).forEach((consoleKey) => {
+    const game = gamesFetch.data[consoleKey].find(
+      (game) => game.id === gameId.gameId
+    );
     if (game) {
       foundGame = game;
     }
