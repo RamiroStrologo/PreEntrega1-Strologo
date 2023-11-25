@@ -17,10 +17,7 @@ En la pagina los usuarios podran ver todos los productos que se ofrecen, su prec
 Los productos se encuentran en un JSON en la carpeta public <br>
 -Me gustaria recibir un comentario sobre como estan estructurados los archivos <br>
 -Me gustaria recibir un comentario sobre como utilice las rutas en el proyecto y si hay algo para mejorar <br>
--Tengo una duda sobre como se pasan las props del componente CardItem al darle click y enviarlo por el navigate en el que es un string, ya que al componente Detalles el ID llega como un objeto al useParams() y en el JS de detalles debo utilizar el parametro como tal y no estaria entendiendo por que. <br>
--La vista de detalles aun se encuentra un poco rota, tratare de corregirlo antes de que sea corregido, pero ya cumple con el requisito de la preentrega. <br>
--La vista de detalles tendra un iframe proporcionado por la API de youtube tal como en el proyecto original se ve. Tratare de implementarlo antes de la corrección. <br>
--Quiero re utilizar el componente CardItem en la vista de Detalles, pero no logro saber como cambiarle por completo los estilos al componente. Por favor indicar como o en que clase el profesor lo explico por si lo pase por alto.
+-El iframe que iba a ser proporcionado por la API de youtube fue remplazado por un iframe fijo que recibe el URL del video a mostrar, por lo que ya no se consumirá la API.
 
 # Tecnologias, frameworks, librerias y lenguajes utilizados
 
