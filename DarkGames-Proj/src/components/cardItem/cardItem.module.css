@@ -35,3 +35,10 @@
   height: 500px;
   width: 380px;
 }
+.cartView p {
+  display: none;
+}
+.cartView img {
+  height: 230px;
+  width: 180px;
+}

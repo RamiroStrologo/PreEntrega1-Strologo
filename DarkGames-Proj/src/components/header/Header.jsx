@@ -29,6 +29,11 @@ export default function Header() {
               <img src="/img/header/about-ico.svg" alt="ABOUTUS" />
             </a>
           </li>
+          <li>
+            <NavLink to={"/tienda/cart"}>
+              <img src="/img/cartWidget/cart-ico.svg" alt="CARRO" />
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>

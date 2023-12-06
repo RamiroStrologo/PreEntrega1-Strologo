@@ -1,45 +1,37 @@
-import React, { useEffect, useState } from "react";
-import Summary from "../../components/pages/detalles_comps/summary/Summary";
-import CardItem from "../../components/pages/tienda_comps/itemList/cardItem/CardItem";
-import { useParams } from "react-router-dom";
-import getGameById from "./detallesJs.js";
+import Summary from "../../components/summary/Summary";
+import CardItem from "../../components/cardItem/CardItem";
+import Iframe from "../../components/iframe/Iframe.jsx";
+import { useNavigate } from "react-router-dom";
 import { detallesCont } from "./detalles.module.css";
-import Iframe from "../../components/pages/detalles_comps/iframe/Iframe.jsx";
+import { ProductsContext } from "../../context/productsContext.jsx";
+import { useContext } from "react";
 
-export default function Detalles({
-  id,
-  imagenSrc,
-  titulo,
-  genero,
-  precio,
-  descripcion,
-}) {
-  const gameId = useParams();
-  const [detalles, setDetalles] = useState([]);
-  useEffect(() => {
-    getGameById(gameId).then((response) => {
-      setDetalles(response);
-    });
-  }, [gameId]);
+export default function Detalles() {
+  const { product, consolaInfo } = useContext(ProductsContext);
+  const navigate = useNavigate();
+  const handleImgClick = () => {
+    navigate(`/tienda/${consolaInfo.name}`);
+  };
 
   return (
     <div className={detallesCont}>
-      <div>
+      <div onClick={handleImgClick}>
         <img src="/img/pages/detalles/back_ico.svg" alt="Icono de volver" />
       </div>
       <aside>
         <CardItem
-          imagenSrc={detalles.imagenSrc}
-          titulo={detalles.titulo}
-          genero={detalles.genero}
-          precio={detalles.precio}
-          vistaDetalles={true}
-          className="detailsView"
+          id={product.id}
+          imgSrc={product.imgSrc}
+          title={product?.title}
+          genre={product?.genre}
+          price={product?.price}
+          consola={consolaInfo?.name}
+          vista={"details"}
         />
       </aside>
       <section>
-        <Summary titulo={detalles.titulo} descripcion={detalles.descripcion} />
-        <Iframe id={gameId} />
+        <Summary titulo={product?.title} descripcion={product?.description} />
+        <Iframe id={product?.ytId} />
       </section>
     </div>
   );

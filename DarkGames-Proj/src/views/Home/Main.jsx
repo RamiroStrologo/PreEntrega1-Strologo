@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { main } from "./main.module.css";
 import { NavLink } from "react-router-dom";
+
 export default function Main() {
   return (
     <main className={main}>

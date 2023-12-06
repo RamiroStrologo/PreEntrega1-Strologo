@@ -5,14 +5,31 @@ import Main from "../views/Home/Main";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import Detalles from "../views/Detalles/Detalles";
+import { ProductsComponentContext } from "../context/productsContext";
+import Cart from "../views/Cart/Cart";
 export default function RouterPrincipal() {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/tienda/:consolaId" element={<Tienda />} />
-        <Route path="/tienda/detalles/:gameId" element={<Detalles />} />
+        <Route
+          path="/tienda/:consolaId"
+          element={
+            <ProductsComponentContext>
+              <Tienda />
+            </ProductsComponentContext>
+          }
+        />
+        <Route
+          path="/tienda/:consolaId/detalles/:gameId"
+          element={
+            <ProductsComponentContext>
+              <Detalles />
+            </ProductsComponentContext>
+          }
+        />
+        <Route path="/tienda/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>
