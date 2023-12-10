@@ -1,6 +1,7 @@
 import React from "react";
 import { headerGrl } from "./header.module.css";
 import { NavLink } from "react-router-dom";
+import CartWidget from "../cartwidget/CartWidget";
 export default function Header() {
   return (
     <header className={headerGrl}>
@@ -25,14 +26,12 @@ export default function Header() {
             </NavLink>
           </li>
           <li>
-            <a>
+            <NavLink to="/aboutUs">
               <img src="/img/header/about-ico.svg" alt="ABOUTUS" />
-            </a>
+            </NavLink>
           </li>
           <li>
-            <NavLink to={"/tienda/cart"}>
-              <img src="/img/cartWidget/cart-ico.svg" alt="CARRO" />
-            </NavLink>
+            <CartWidget />
           </li>
         </ul>
       </nav>

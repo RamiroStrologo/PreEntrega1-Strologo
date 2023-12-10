@@ -6,8 +6,9 @@ import {
   doc,
   where,
 } from "firebase/firestore";
-import { db } from "../firebase/client";
-export async function getProducts(consola) {
+import { db } from "../../firebase/client";
+
+export async function getProductsByConsole(consola) {
   const productsRef = query(
     collection(db, "products"),
     where("category", "==", consola)
@@ -38,7 +39,7 @@ export async function getConsolaInfo(consola) {
   } else return null;
 }
 
-export async function getGameById(gameId) {
+export async function getProductById(gameId) {
   const productsRef = doc(db, "products", gameId);
   const snapshot = await getDoc(productsRef);
   if (!snapshot.empty) {
@@ -50,8 +51,8 @@ export async function getGameById(gameId) {
 }
 
 const productsJs = {
-  getProducts,
+  getProductsByConsole,
   getConsolaInfo,
-  getGameById,
+  getProductById,
 };
 export default productsJs;

@@ -2,14 +2,18 @@
   background-color: #0d1b2a;
   display: grid;
   grid-template-areas: "back aside section";
-  grid-template-columns: 0.1fr 1fr 0.5fr;
+  grid-template-columns: 0.1fr 0.3fr 1fr;
   gap: 3rem;
   margin: 3rem;
 }
-.detallesCont div {
+[data-id="buttonsDetail"] {
   display: flex;
   align-self: flex-start;
+  flex-direction: column;
   grid-area: back;
+}
+[data-id="buttonsDetail"] > *:hover {
+  cursor: pointer;
 }
 .detallesCont aside {
   display: flex;

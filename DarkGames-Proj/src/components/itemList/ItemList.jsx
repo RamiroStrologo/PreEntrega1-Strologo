@@ -1,29 +1,53 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import CardItem from "../cardItem/CardItem";
-import { itemList } from "./itemList.module.css";
+import Loader from "../loader/Loader";
 import Separador from "../separador/Separador";
+import { itemList } from "./itemList.module.css";
 import { ProductsContext } from "../../context/productsContext";
+import { useParams } from "react-router-dom";
 
 export default function ItemList() {
-  const { products, consolaInfo } = useContext(ProductsContext);
+  const [products, setProducts] = useState([]);
+  const [consolaInfo, setConsolaInfo] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  const { helpers } = useContext(ProductsContext);
+
+  const { consolaId } = useParams();
+
+  useEffect(() => {
+    setLoading(true);
+    Promise.all([helpers.getConsole(consolaId), helpers.getGames(consolaId)])
+      .then(([consoleResponse, GameResponse]) => {
+        setConsolaInfo(consoleResponse);
+        setProducts(GameResponse);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [consolaId]);
   return (
     <section className={itemList}>
-      <Separador
-        sepSrc={consolaInfo.imgSrc}
-        sepTxt={consolaInfo.txtSep}
-        sepAlt={consolaInfo.altImgSep}
-      />
-      <div data-id="contCards">
-        {products.length > 0 &&
-          products.map((prod) => (
-            <CardItem
-              key={prod.id}
-              {...prod}
-              consola={consolaInfo.name}
-              vista={"store"}
-            />
-          ))}
-      </div>
+      {loading && <Loader />}
+      {!loading && (
+        <>
+          <Separador
+            sepSrc={consolaInfo.imgSrc}
+            sepTxt={consolaInfo.txtSep}
+            sepAlt={consolaInfo.altImgSep}
+          />
+          <div data-id="contCards">
+            {products.map((prod) => (
+              <CardItem
+                key={prod.id}
+                {...prod}
+                consola={consolaInfo.name}
+                vista={"store"}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </section>
   );
 }

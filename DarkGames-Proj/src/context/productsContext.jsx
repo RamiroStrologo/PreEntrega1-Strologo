@@ -1,36 +1,51 @@
-import { createContext, useEffect, useState } from "react";
-import productsJs from "./productsJs";
-import { useNavigate, useParams } from "react-router-dom";
+import { createContext, useState } from "react";
+import productsJs from "./js/productsJs";
+import cartJs from "./js/cartJs";
 
 export const ProductsContext = createContext();
 
 export const ProductsComponentContext = ({ children }) => {
-  const [products, setProducts] = useState([]);
-  const [consolaInfo, setConsolaInfo] = useState({});
-  const [product, setProduct] = useState({});
-  const { consolaId, gameId } = useParams();
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (consolaId) {
-      productsJs.getConsolaInfo(consolaId).then((response) => {
-        setConsolaInfo(response);
-        if (response == null) navigate("/");
-      });
-      productsJs.getProducts(consolaId).then((response) => {
-        setProducts(response);
-      });
-    }
-  }, [consolaId]);
+  //Devuelve todos los juegos de una consola
+  const getGames = (consolaId) => productsJs.getProductsByConsole(consolaId);
 
-  useEffect(() => {
-    if (gameId) {
-      productsJs.getGameById(gameId).then((response) => {
-        setProduct(response);
-      });
-    }
-  }, [gameId]);
+  //Devuelve la info de una consola
+  const getConsole = (consolaId) => productsJs.getConsolaInfo(consolaId);
+
+  //Devuelve un juego por su ID
+  const getGame = (gameId) => productsJs.getProductById(gameId);
+
+  //Helpers relativos al carrito
+  //Obtiene la coleccion de Firebase
+  const getCart = () => cartJs.getCart();
+
+  //Agrega un juego al carrito de Firebase
+  const addGame = ({ imgSrc, title, price }, cant) => {
+    const productToAdd = { imgSrc, title, price, cant };
+
+    cartJs.addProduct(productToAdd);
+  };
+  //Borra un item del carrito de Firebase
+  const deleteProductCart = (cartItemId) => {
+    cartJs.deleteProductCartById(cartItemId);
+  };
+
+  //Modifica la cantidad de un item del carrito de Firebase
+  const modifyProductCant = (cartItemId, newCant) => {
+    cartJs.modifyProductCart(cartItemId, newCant);
+  };
+
+  const helpers = {
+    getGame,
+    getGames,
+    getConsole,
+
+    getCart,
+    addGame,
+    deleteProductCart,
+    modifyProductCant,
+  };
   return (
-    <ProductsContext.Provider value={{ products, consolaInfo, product }}>
+    <ProductsContext.Provider value={{ helpers }}>
       {children}
     </ProductsContext.Provider>
   );

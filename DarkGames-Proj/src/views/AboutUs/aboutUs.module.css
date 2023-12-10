@@ -1,0 +1,55 @@
+.aboutUs {
+  font-size: 1.7rem;
+}
+
+.localInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-id="locRef"] {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-right: 10rem;
+}
+[data-id="locRef"] div {
+  margin: 3rem;
+}
+
+[data-id="locRef"] div img {
+  width: 30px;
+  height: 30px;
+}
+[data-id="locMap"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+[data-id="locMap"] div {
+  display: flex;
+  justify-content: center;
+}
+[data-id="sep"] {
+  background-color: #415a77;
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.aboutText h1 {
+  text-align: center;
+}
+
+.aboutText div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

@@ -1,39 +1,33 @@
-import React, { useEffect, useState } from "react";
-import CardItem from "../../components/cardItem/CardItem";
-import cartJs from "./cartJs";
-import { cartCont } from "./cart.module.css";
+import { useCallback, useContext, useEffect, useState } from "react";
+import CartItem from "../../components/cartItem/CartItem";
+import Loader from "../../components/loader/Loader";
+import { ProductsContext } from "../../context/productsContext";
+import cartJs from "../../context/js/cartJs";
 
-export default function Cart({ toCart }) {
+export default function Cart() {
   const [cart, setCart] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const { helpers } = useContext(ProductsContext);
+
   useEffect(() => {
-    cartJs.getCart().then((response) => {
-      setCart(response);
-    });
-  }, [cart]);
+    setLoading(true);
+    helpers
+      .getCart()
+      .then((response) => {
+        setCart(response);
+        console.log(response);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div>
-      {cart.map((cart) => (
-        <div className={cartCont}>
-          <CardItem key={cart.id} imgSrc={cart.imgSrc} vista={"cart"} />
-          <div data-id="divSpan">
-            <span data-id="titleSpan"> {`Título: ${cart.title}`} </span>
-            <span>{`Precio: ${cart.price}`}</span>
-          </div>
-          <div data-id="divButtonCant">
-            <button>-</button>
-            <span>{cart.cant}</span>
-            <button>+</button>
-          </div>
-          <div data-id="divButtonDelete">
-            <button>
-              <img src="/img/pages/cart/check-ico.svg" alt="SAVE" />
-            </button>
-            <button>
-              <img src="/img/pages/cart/delete-ico.svg" alt="DELETE" />
-            </button>
-          </div>
-        </div>
-      ))}
+      {loading && <Loader />}
+      {!loading &&
+        cart.map((cartItem) => <CartItem key={cartItem.id} cart={cartItem} />)}
     </div>
   );
 }

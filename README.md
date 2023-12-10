@@ -27,6 +27,7 @@ Los productos se encuentran en un JSON en la carpeta public <br>
 -JavaScript <br>
 -React
 -Vite
+.https://loading.io/ (fuente del Loader)
 
 # Paleta de colores
 

@@ -1,0 +1,110 @@
+.loaderCont {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d1b2a;
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+}
+
+.loader > div:nth-child(2) {
+  transform: translate(-15px, 0);
+}
+
+.loader > div:nth-child(2) div {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 120px;
+  height: 60px;
+  border-radius: 120px 120px 0 0;
+  background: #778da9;
+  animation: loader-1 0.819672131147541s linear infinite;
+  transform-origin: 60px 60px;
+}
+
+.loader > div:nth-child(2) div:nth-child(2) {
+  animation: loader-2 0.819672131147541s linear infinite;
+}
+
+.loader > div:nth-child(2) div:nth-child(3) {
+  transform: rotate(-90deg);
+  animation: none;
+}
+
+.loader > div:nth-child(1) {
+  display: block;
+}
+
+.loader > div:nth-child(1) div {
+  position: absolute;
+  top: 92px;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e0e1dd;
+  animation: loader-3 0.819672131147541s linear infinite;
+}
+
+.loader > div:nth-child(1) div:nth-child(1) {
+  animation-delay: -0.8174s;
+}
+
+.loader > div:nth-child(1) div:nth-child(2) {
+  animation-delay: -0.4026s;
+}
+
+.loader > div:nth-child(1) div:nth-child(3) {
+  animation-delay: 0s;
+}
+
+.loader div {
+  box-sizing: content-box;
+}
+
+@keyframes loader-3 {
+  0% {
+    transform: translate(190px, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(70px, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes loader-1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes loader-2 {
+  0% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(225deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}

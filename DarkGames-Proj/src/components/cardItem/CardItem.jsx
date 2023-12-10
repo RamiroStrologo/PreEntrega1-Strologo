@@ -34,7 +34,7 @@ export default function CardItem({
     >
       <img src={imgSrc} alt={title} />
       <p>
-        {`Género: ${genre}`} <br /> <br /> {`Precio: ${price}`} <br />
+        {`Género: ${genre}`} <br /> <br /> {`Precio: $${price}`} <br />
       </p>
     </div>
   );

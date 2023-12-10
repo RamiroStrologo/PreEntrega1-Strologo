@@ -7,10 +7,13 @@ import Footer from "../components/footer/Footer";
 import Detalles from "../views/Detalles/Detalles";
 import { ProductsComponentContext } from "../context/productsContext";
 import Cart from "../views/Cart/Cart";
+import AboutUs from "../views/AboutUs/AboutUs";
 export default function RouterPrincipal() {
   return (
     <BrowserRouter>
-      <Header />
+      <ProductsComponentContext>
+        <Header />
+      </ProductsComponentContext>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route
@@ -29,7 +32,15 @@ export default function RouterPrincipal() {
             </ProductsComponentContext>
           }
         />
-        <Route path="/tienda/cart" element={<Cart />} />
+        <Route
+          path="/tienda/cart"
+          element={
+            <ProductsComponentContext>
+              <Cart />
+            </ProductsComponentContext>
+          }
+        />
+        <Route path="/aboutUs" element={<AboutUs />} />
       </Routes>
       <Footer />
     </BrowserRouter>
