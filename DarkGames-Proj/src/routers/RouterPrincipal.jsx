@@ -5,9 +5,11 @@ import Main from "../views/Home/Main";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import Detalles from "../views/Detalles/Detalles";
-import { ProductsComponentContext } from "../context/productsContext";
 import Cart from "../views/Cart/Cart";
 import AboutUs from "../views/AboutUs/AboutUs";
+import Checkout from "../views/Checkout/Checkout";
+import { ProductsComponentContext } from "../context/productsContext";
+
 export default function RouterPrincipal() {
   return (
     <BrowserRouter>
@@ -41,6 +43,14 @@ export default function RouterPrincipal() {
           }
         />
         <Route path="/aboutUs" element={<AboutUs />} />
+        <Route
+          path="/tienda/cart/checkout"
+          element={
+            <ProductsComponentContext>
+              <Checkout />
+            </ProductsComponentContext>
+          }
+        ></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

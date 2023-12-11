@@ -28,7 +28,10 @@ export const ProductsComponentContext = ({ children }) => {
   const deleteProductCart = (cartItemId) => {
     cartJs.deleteProductCartById(cartItemId);
   };
-
+  //Borra todos los items del carrito de Firebase
+  const deleteAll = () => {
+    cartJs.deleteCart();
+  };
   //Modifica la cantidad de un item del carrito de Firebase
   const modifyProductCant = (cartItemId, newCant) => {
     cartJs.modifyProductCart(cartItemId, newCant);
@@ -42,6 +45,7 @@ export const ProductsComponentContext = ({ children }) => {
     getCart,
     addGame,
     deleteProductCart,
+    deleteAll,
     modifyProductCant,
   };
   return (

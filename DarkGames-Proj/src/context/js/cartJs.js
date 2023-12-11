@@ -11,13 +11,21 @@ import { db } from "../../firebase/client";
 export async function getCart() {
   const cartRef = collection(db, "cart");
   const snapshot = await getDocs(cartRef);
+
   if (!snapshot.empty) {
     const cartCollection = snapshot.docs.map((docs) => ({
       id: docs.id,
       ...docs.data(),
     }));
-    return cartCollection;
-  } else return null;
+    const total = cartCollection.reduce(
+      (acc, item) => acc + item.cant * item.price,
+      0
+    );
+
+    return { cart: cartCollection, total };
+  } else {
+    return { cart: [], total: 0 };
+  }
 }
 export async function addProduct(product) {
   const cartRef = collection(db, "cart");
@@ -31,7 +39,14 @@ export async function deleteProductCartById(cartItemId) {
   const productRef = doc(db, "cart", cartItemId);
   await deleteDoc(productRef);
 }
-export async function deleteCart() {}
+export async function deleteCart() {
+  const cartCollection = collection(db, "cart");
+  const snapshot = await getDocs(cartCollection);
+  // Elimina cada documento en la colección
+  snapshot.docs.forEach(async (doc) => {
+    await deleteDoc(doc.ref);
+  });
+}
 
 export async function countCart() {
   const cartRef = collection(db, "cart");
@@ -45,6 +60,7 @@ const cartJs = {
   getCart,
   addProduct,
   deleteProductCartById,
+  deleteCart,
   modifyProductCart,
   countCart,
 };

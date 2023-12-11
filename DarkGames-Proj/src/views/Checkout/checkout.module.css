@@ -1,0 +1,33 @@
+.checkout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  height: 100vh;
+}
+.checkout span {
+  font-size: 2.3rem;
+}
+.checkout section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #778da9;
+  height: 30rem;
+  width: 30rem;
+}
+
+.checkout section div {
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.checkout section div input {
+  background-color: #415a77;
+  margin-left: 1rem;
+}
+[data-id="buttons"] {
+  display: flex;
+}

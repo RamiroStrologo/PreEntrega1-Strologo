@@ -2,6 +2,8 @@ import CardItem from "../cardItem/CardItem";
 import { cartCont } from "./cartItem.module.css";
 import { ProductsContext } from "../../context/productsContext";
 import { useContext, useEffect, useState } from "react";
+import ButtonDelete from "../buttonDelete/ButtonDelete";
+import ButtonSave from "../buttonSave/ButtonSave";
 
 export default function CartItem({ cart }) {
   const [cont, setCont] = useState(cart.cant);
@@ -41,12 +43,8 @@ export default function CartItem({ cart }) {
         <span>{`Total: $${cart.price * cont}`}</span>
       </div>
       <div data-id="divButtonDelete">
-        <button onClick={() => setSave(true)}>
-          <img src="/img/pages/cart/check-ico.svg" alt="SAVE" />
-        </button>
-        <button onClick={() => setDelet(true)}>
-          <img src="/img/pages/cart/delete-ico.svg" alt="DELETE" />
-        </button>
+        <ButtonSave onClick={() => setSave(true)} />
+        <ButtonDelete onClick={() => setDelet(true)} />
       </div>
     </div>
   );
