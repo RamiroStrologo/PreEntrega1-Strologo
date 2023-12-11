@@ -14,10 +14,11 @@ En la pagina los usuarios podran ver todos los productos que se ofrecen, su prec
 
 # Comentarios para el profesor / Tutor corrector
 
-Los productos se encuentran en un JSON en la carpeta public <br>
--Me gustaria recibir un comentario sobre como estan estructurados los archivos <br>
--Me gustaria recibir un comentario sobre como utilice las rutas en el proyecto y si hay algo para mejorar <br>
--El iframe que iba a ser proporcionado por la API de youtube fue remplazado por un iframe fijo que recibe el URL del video a mostrar, por lo que ya no se consumirá la API.
+-El componente Cart utiliza un estado del contexto como dependencia para actualizarse, sin embargo esto genera una doble ejecución del mismo. Es la única manera que logre que funcione la logica de re-render dinamica para el componente, auqnue soy conciente de que NO esta bien. Me gustaria que se me explique como deberia hacerse realemnte.
+-El componente CartWidget utiliza el mismo estado del mismo contexto pero sin embargo no responde al cambio del mismo y no se re-renderiza hasta que lo fuerzo con un F5 y no entiendo por qué.
+-La logica para agregar elementos al carrito (desde los detalles del producto) no controla si ya se encuentra o no en el mismo.
+
+-Tratare de solucionar estos problemas antes de que sea corregido. Lo entrego asi de manera preventiva.
 
 # Tecnologias, frameworks, librerias y lenguajes utilizados
 

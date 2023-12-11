@@ -17,14 +17,14 @@ export async function getCart() {
       id: docs.id,
       ...docs.data(),
     }));
-    const total = cartCollection.reduce(
+    const totalCost = cartCollection.reduce(
       (acc, item) => acc + item.cant * item.price,
       0
     );
-
-    return { cart: cartCollection, total };
+    const totalItems = cartCollection.reduce((acc, doc) => acc + doc.cant, 0);
+    return { cart: cartCollection, totalCost, totalItems };
   } else {
-    return { cart: [], total: 0 };
+    return { cart: [], totalCost: 0, totalItems: 0 };
   }
 }
 export async function addProduct(product) {
@@ -48,20 +48,11 @@ export async function deleteCart() {
   });
 }
 
-export async function countCart() {
-  const cartRef = collection(db, "cart");
-  const snapshot = await getDocs(cartRef);
-  if (!snapshot.empty) {
-    const total = snapshot.docs.reduce((acc, doc) => acc + doc.data().cant, 0);
-    return total;
-  }
-}
 const cartJs = {
   getCart,
   addProduct,
   deleteProductCartById,
   deleteCart,
   modifyProductCart,
-  countCart,
 };
 export default cartJs;

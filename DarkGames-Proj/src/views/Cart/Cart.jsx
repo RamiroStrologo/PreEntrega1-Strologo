@@ -5,6 +5,7 @@ import { ProductsContext } from "../../context/productsContext";
 import ButtonSave from "../../components/buttonSave/ButtonSave";
 import ButtonDelete from "../../components/buttonDelete/ButtonDelete";
 import { useNavigate } from "react-router-dom";
+import { cartSummary } from "./cart.module.css";
 
 export default function Cart() {
   const [cart, setCart] = useState([]);
@@ -12,7 +13,7 @@ export default function Cart() {
   const [delet, setDelet] = useState(false);
 
   const navigate = useNavigate();
-  const { helpers } = useContext(ProductsContext);
+  const { helpers, updateCart, setUpdateCart } = useContext(ProductsContext);
 
   useEffect(() => {
     setLoading(true);
@@ -23,8 +24,9 @@ export default function Cart() {
       })
       .finally(() => {
         setLoading(false);
+        setUpdateCart(false);
       });
-  }, []);
+  }, [updateCart]);
 
   useEffect(() => {
     if (delet) helpers.deleteAll();
@@ -39,14 +41,16 @@ export default function Cart() {
           {cart.cart.map((cartItem) => (
             <CartItem key={cartItem.id} cart={cartItem} />
           ))}
-          <div>
-            {`Total: $${cart.total}`}
-            <ButtonSave
-              onClick={() => {
-                navigate("/tienda/cart/checkout");
-              }}
-            />
-            <ButtonDelete onClick={() => setDelet(true)} />
+          <div className={cartSummary}>
+            <span> {`Total: $${cart.totalCost}`}</span>
+            <div>
+              <ButtonSave
+                onClick={() => {
+                  navigate("/tienda/cart/checkout");
+                }}
+              />
+              <ButtonDelete onClick={() => setDelet(true)} />
+            </div>
           </div>
         </>
       )}

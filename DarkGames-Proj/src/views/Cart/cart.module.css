@@ -1,0 +1,11 @@
+.cartSummary {
+  background-color: #1b263b;
+  margin: 1.5rem 10rem 1.5rem 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+.cartSummary span {
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+}

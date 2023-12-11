@@ -5,9 +5,7 @@
   background-color: #1b263b;
   margin: 1.5rem 10rem 1.5rem 10rem;
 }
-.cartCont button:hover {
-  cursor: pointer;
-}
+
 [data-id="divSpan"] {
   display: flex;
   flex-direction: column;
