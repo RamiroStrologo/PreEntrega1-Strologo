@@ -31,3 +31,10 @@
 [data-id="buttons"] {
   display: flex;
 }
+[data-id="confirmOrder"] {
+  display: flex;
+  flex-direction: column;
+}
+[data-id="confirmOrder"] span {
+  margin-bottom: 3rem;
+}

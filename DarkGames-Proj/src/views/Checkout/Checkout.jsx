@@ -34,7 +34,6 @@ export default function Checkout() {
       setLoading(true);
       createOrder(nomRef, numRef, emailRef)
         .then((id) => {
-          console.log("ID obtenido:", id);
           setIdOrder(id);
           helpers.deleteAll();
         })
@@ -80,8 +79,9 @@ export default function Checkout() {
         </>
       ) : (
         idOrder && (
-          <div>
-            <span>{`ID de la orden ${idOrder}`}</span>
+          <div data-id="confirmOrder">
+            <span>Compra finalizada</span>
+            <span>{`ID de la orden: ${idOrder}`}</span>
             <ButtonSave
               onClick={() => {
                 navigate("/");

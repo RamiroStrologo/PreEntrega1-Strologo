@@ -5,6 +5,8 @@ import {
   doc,
   deleteDoc,
   updateDoc,
+  query,
+  where,
 } from "firebase/firestore";
 import { db } from "../../firebase/client";
 
@@ -28,9 +30,17 @@ export async function getCart() {
   }
 }
 export async function addProduct(product) {
-  const cartRef = collection(db, "cart");
-  await addDoc(cartRef, product);
+  const checkProd = await checkProductInCart(product.title);
+  if (checkProd.size === 0) {
+    await addDoc(collection(db, "cart"), product);
+  }
 }
+async function checkProductInCart(title) {
+  const productRef = query(collection(db, "cart"), where("title", "==", title));
+  const res = await getDocs(productRef);
+  return res;
+}
+
 export async function modifyProductCart(cardItemId, newCant) {
   const productRef = doc(db, "cart", cardItemId);
   updateDoc(productRef, { cant: newCant });

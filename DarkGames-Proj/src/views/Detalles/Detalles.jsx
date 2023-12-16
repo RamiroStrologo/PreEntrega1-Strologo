@@ -22,6 +22,7 @@ export default function Detalles() {
 
   const addToCart = () => {
     helpers.addGame(product, 1);
+    navigate("/tienda/cart");
   };
 
   useEffect(() => {
