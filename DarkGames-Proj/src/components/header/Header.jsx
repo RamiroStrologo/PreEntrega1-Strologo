@@ -30,9 +30,6 @@ export default function Header() {
               <img src="/img/header/about-ico.svg" alt="ABOUTUS" />
             </NavLink>
           </li>
-          <li>
-            <CartWidget />
-          </li>
         </ul>
       </nav>
     </header>

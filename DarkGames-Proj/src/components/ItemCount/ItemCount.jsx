@@ -1,9 +1,7 @@
 import { useContext, useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import { CartContext } from "../../context/cartContext";
-import ItemCount from "../ItemCount/ItemCount";
 
-export default function CartWidget() {
+export default function ItemCount() {
   const { helpers, updateCart, setUpdateCart } = useContext(CartContext);
   const [totalCart, setTotalCart] = useState(0);
   useEffect(() => {
@@ -16,12 +14,5 @@ export default function CartWidget() {
         setUpdateCart(false);
       });
   }, [updateCart]);
-  return (
-    <>
-      <NavLink to={"/tienda/cart"}>
-        <img src="/img/cartWidget/cart-ico.svg" alt="CARRO" />
-      </NavLink>
-      <ItemCount />
-    </>
-  );
+  return <span>{totalCart}</span>;
 }

@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { main } from "./main.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Main() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate("/category/ps4");
+  }, []);
   return (
     <main className={main}>
       <div data-id="divTitle">

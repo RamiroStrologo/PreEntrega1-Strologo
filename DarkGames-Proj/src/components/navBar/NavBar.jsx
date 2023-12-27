@@ -1,6 +1,7 @@
 import React from "react";
 import { asideNavBar } from "./navBar.module.css";
 import { NavLink } from "react-router-dom";
+import CartWidget from "../cartwidget/CartWidget";
 
 export default function AsideNavBar() {
   return (
@@ -23,6 +24,9 @@ export default function AsideNavBar() {
           </li>
           <li>
             <NavLink to="/category/xone">XBOX ONE</NavLink>
+          </li>
+          <li>
+            <CartWidget />
           </li>
         </ul>
       </nav>
