@@ -1,5 +1,5 @@
 import React from "react";
-import { asideNavBar } from "./asideNavBar.module.css";
+import { asideNavBar } from "./navBar.module.css";
 import { NavLink } from "react-router-dom";
 
 export default function AsideNavBar() {
@@ -16,13 +16,13 @@ export default function AsideNavBar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/tienda/ps4">PS4</NavLink>
+            <NavLink to="/category/ps4">PS4</NavLink>
           </li>
           <li>
-            <NavLink to="/tienda/ps3">PS3</NavLink>
+            <NavLink to="/category/ps3">PS3</NavLink>
           </li>
           <li>
-            <NavLink to="/tienda/xone">XBOX ONE</NavLink>
+            <NavLink to="/category/xone">XBOX ONE</NavLink>
           </li>
         </ul>
       </nav>

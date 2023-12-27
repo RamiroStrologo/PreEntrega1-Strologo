@@ -21,7 +21,7 @@ export default function Header() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/tienda/ps4">
+            <NavLink to="/category/ps4">
               <img src="/img/header/store-ico.svg" alt="STORE" />
             </NavLink>
           </li>

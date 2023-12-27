@@ -5,30 +5,38 @@ import Loader from "../../components/loader/Loader";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
 import createOrder from "./checkJS";
-import { ProductsContext } from "../../context/productsContext";
+import { CartContext } from "../../context/cartContext";
 
 export default function Checkout() {
   const [confirm, setConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [idOrder, setIdOrder] = useState(null);
-  const { helpers } = useContext(ProductsContext);
+  const [emailError, setEmailError] = useState(false); // Nuevo estado para el error de email
+  const { helpers } = useContext(CartContext);
   const nomRef = useRef(null);
   const numRef = useRef(null);
   const emailRef = useRef(null);
 
   const navigate = useNavigate();
 
-  //Funcion que valida el capo telefono (solo numeros)
   const handleTelefonoChange = (e) => {
     const inputValue = e.target.value;
     e.target.value = inputValue.replace(/\D/g, "");
   };
-  //Funcion que valida que todos los campos sean cargados
-  const handleConfirm = () => {
-    if (nomRef.current.value && numRef.current.value && emailRef.current.value)
-      setConfirm(true);
+
+  const handleEmailChange = (e) => {
+    const emailValue = e.target.value;
+    // Utilizamos una expresión regular para validar el formato del email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setEmailError(!emailRegex.test(emailValue));
   };
-  //Crea la orden en Firebase
+
+  const handleConfirm = () => {
+    if (nomRef.current.value && numRef.current.value && !emailError) {
+      setConfirm(true);
+    }
+  };
+
   useEffect(() => {
     if (confirm) {
       setLoading(true);
@@ -65,7 +73,15 @@ export default function Checkout() {
             </div>
             <div>
               <label htmlFor="email">Email:</label>
-              <input type="text" id="email" ref={emailRef} />
+              <input
+                type="text"
+                id="email"
+                ref={emailRef}
+                onChange={handleEmailChange}
+              />
+              {emailError && (
+                <span data-id="spanErrEmail"> {"Email no valido"}</span>
+              )}
             </div>
             <div data-id="buttons">
               <ButtonSave onClick={handleConfirm} />

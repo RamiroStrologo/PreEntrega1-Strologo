@@ -1,6 +1,6 @@
 import CardItem from "../cardItem/CardItem";
 import { cartCont } from "./cartItem.module.css";
-import { ProductsContext } from "../../context/productsContext";
+import { CartContext } from "../../context/cartContext";
 import { useContext, useEffect, useState } from "react";
 import ButtonDelete from "../buttonDelete/ButtonDelete";
 import ButtonSave from "../buttonSave/ButtonSave";
@@ -10,7 +10,7 @@ export default function CartItem({ cart }) {
   const [save, setSave] = useState(false);
   const [delet, setDelet] = useState(false);
 
-  const { helpers } = useContext(ProductsContext);
+  const { helpers } = useContext(CartContext);
 
   const upCont = () => {
     setCont(cont + 1);

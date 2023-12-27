@@ -1,54 +1,54 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Tienda from "../views/Tienda/Tienda";
+import ItemListContainer from "../views/itemListContainer/ItemListContainer";
 import Main from "../views/Home/Main";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
-import Detalles from "../views/Detalles/Detalles";
+import ItemDetailContainer from "../views/itemDetailContainer/ItemDetailContainer";
 import Cart from "../views/Cart/Cart";
 import AboutUs from "../views/AboutUs/AboutUs";
 import Checkout from "../views/Checkout/Checkout";
-import { ProductsComponentContext } from "../context/productsContext";
+import { CartProvider } from "../context/cartContext";
 
 export default function RouterPrincipal() {
   return (
     <BrowserRouter>
-      <ProductsComponentContext>
+      <CartProvider>
         <Header />
-      </ProductsComponentContext>
+      </CartProvider>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route
-          path="/tienda/:consolaId"
+          path="/category/:consolaId"
           element={
-            <ProductsComponentContext>
-              <Tienda />
-            </ProductsComponentContext>
+            <CartProvider>
+              <ItemListContainer />
+            </CartProvider>
           }
         />
         <Route
-          path="/tienda/:consolaId/detalles/:gameId"
+          path="/tienda/:consolaId/item/:gameId"
           element={
-            <ProductsComponentContext>
-              <Detalles />
-            </ProductsComponentContext>
+            <CartProvider>
+              <ItemDetailContainer />
+            </CartProvider>
           }
         />
         <Route
           path="/tienda/cart"
           element={
-            <ProductsComponentContext>
+            <CartProvider>
               <Cart />
-            </ProductsComponentContext>
+            </CartProvider>
           }
         />
         <Route path="/aboutUs" element={<AboutUs />} />
         <Route
           path="/tienda/cart/checkout"
           element={
-            <ProductsComponentContext>
+            <CartProvider>
               <Checkout />
-            </ProductsComponentContext>
+            </CartProvider>
           }
         ></Route>
       </Routes>

@@ -3,7 +3,7 @@ import CardItem from "../cardItem/CardItem";
 import Loader from "../loader/Loader";
 import Separador from "../separador/Separador";
 import { itemList } from "./itemList.module.css";
-import { ProductsContext } from "../../context/productsContext";
+import { CartContext } from "../../context/cartContext";
 import { useParams } from "react-router-dom";
 
 export default function ItemList() {
@@ -11,7 +11,7 @@ export default function ItemList() {
   const [consolaInfo, setConsolaInfo] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const { helpers } = useContext(ProductsContext);
+  const { helpers } = useContext(CartContext);
 
   const { consolaId } = useParams();
 

@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import CartItem from "../../components/cartItem/CartItem";
 import Loader from "../../components/loader/Loader";
-import { ProductsContext } from "../../context/productsContext";
+import { CartContext } from "../../context/cartContext";
 import ButtonSave from "../../components/buttonSave/ButtonSave";
 import ButtonDelete from "../../components/buttonDelete/ButtonDelete";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +13,7 @@ export default function Cart() {
   const [delet, setDelet] = useState(false);
 
   const navigate = useNavigate();
-  const { helpers, updateCart, setUpdateCart } = useContext(ProductsContext);
+  const { helpers, updateCart, setUpdateCart } = useContext(CartContext);
 
   useEffect(() => {
     setLoading(true);

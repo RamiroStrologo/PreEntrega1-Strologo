@@ -1,11 +1,11 @@
-import AsideNavBar from "../../components/asideNavBar/AsideNavBar";
+import NavBar from "../../components/navBar/NavBar";
 import ItemList from "../../components/itemList/ItemList";
-import { tienda } from "./tienda.module.css";
+import { tienda } from "./itemListContainer.module.css";
 
 export default function Tienda() {
   return (
     <div className={tienda}>
-      <AsideNavBar />
+      <NavBar />
       <ItemList />
     </div>
   );

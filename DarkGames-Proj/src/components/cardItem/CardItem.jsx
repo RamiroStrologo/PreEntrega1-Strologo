@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import {
   cardItem,
   detailsView,
@@ -19,7 +18,7 @@ export default function CardItem({
   const navigate = useNavigate();
 
   const handleImgClick = () => {
-    if (vista == "store") navigate(`/tienda/${consola}/detalles/${id}`);
+    if (vista == "store") navigate(`/tienda/${consola}/item/${id}`);
   };
   return (
     <div

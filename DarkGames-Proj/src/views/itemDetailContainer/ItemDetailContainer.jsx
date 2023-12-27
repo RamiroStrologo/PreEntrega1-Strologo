@@ -1,23 +1,23 @@
-import Summary from "../../components/summary/Summary";
-import CardItem from "../../components/cardItem/CardItem";
+import Summary from "../../components/summary/Summary.jsx";
+import CardItem from "../../components/cardItem/CardItem.jsx";
 import Iframe from "../../components/iframe/Iframe.jsx";
 import Loader from "../../components/loader/Loader.jsx";
 import { useNavigate, useParams } from "react-router-dom";
-import { detallesCont } from "./detalles.module.css";
-import { ProductsContext } from "../../context/productsContext.jsx";
+import { detallesCont } from "./itemDetailContainer.module.css";
+import { CartContext } from "../../context/cartContext.jsx";
 import { useContext, useEffect, useState } from "react";
 
 export default function Detalles() {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const { helpers } = useContext(ProductsContext);
+  const { helpers } = useContext(CartContext);
 
   const { gameId, consolaId } = useParams();
   const navigate = useNavigate();
 
   const handleImgClick = () => {
-    navigate(`/tienda/${consolaId}`);
+    navigate(`/category/${consolaId}`);
   };
 
   const addToCart = () => {

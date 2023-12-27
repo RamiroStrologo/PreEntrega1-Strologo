@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { ProductsContext } from "../../context/productsContext";
+import { CartContext } from "../../context/cartContext";
 
 export default function CartWidget() {
-  const { helpers, updateCart, setUpdateCart } = useContext(ProductsContext);
+  const { helpers, updateCart, setUpdateCart } = useContext(CartContext);
   const [totalCart, setTotalCart] = useState(0);
   useEffect(() => {
     helpers
