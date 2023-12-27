@@ -11,7 +11,7 @@ export default function Checkout() {
   const [confirm, setConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [idOrder, setIdOrder] = useState(null);
-  const [emailError, setEmailError] = useState(false); // Nuevo estado para el error de email
+  const [emailError, setEmailError] = useState(false);
   const { helpers } = useContext(CartContext);
   const nomRef = useRef(null);
   const numRef = useRef(null);
@@ -19,6 +19,10 @@ export default function Checkout() {
 
   const navigate = useNavigate();
 
+  const handleNombreChange = (e) => {
+    const inputValue = e.target.value;
+    e.target.value = inputValue.replace(/[\W\d]/g, "");
+  };
   const handleTelefonoChange = (e) => {
     const inputValue = e.target.value;
     e.target.value = inputValue.replace(/\D/g, "");
@@ -60,7 +64,12 @@ export default function Checkout() {
           <section>
             <div>
               <label htmlFor="nom">Nombre:</label>
-              <input type="text" id="nom" ref={nomRef} />
+              <input
+                type="text"
+                id="nom"
+                onChange={handleNombreChange}
+                ref={nomRef}
+              />
             </div>
             <div>
               <label htmlFor="num">Telefono:</label>
