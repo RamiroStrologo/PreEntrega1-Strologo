@@ -20,8 +20,8 @@ export default function CartWidget() {
     <>
       <NavLink to={"/tienda/cart"}>
         <img src="/img/cartWidget/cart-ico.svg" alt="CARRO" />
+        <span>{totalCart}</span>
       </NavLink>
-      <ItemCount />
     </>
   );
 }

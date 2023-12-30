@@ -3,7 +3,7 @@ import { asideNavBar } from "./navBar.module.css";
 import { NavLink } from "react-router-dom";
 import CartWidget from "../cartwidget/CartWidget";
 
-export default function AsideNavBar() {
+export default function NavBar() {
   return (
     <aside className={asideNavBar}>
       <nav>

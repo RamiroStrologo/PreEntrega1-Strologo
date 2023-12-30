@@ -6,10 +6,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import { detallesCont } from "./itemDetailContainer.module.css";
 import { CartContext } from "../../context/cartContext.jsx";
 import { useContext, useEffect, useState } from "react";
+import ItemCount from "../../components/ItemCount/ItemCount.jsx";
 
-export default function Detalles() {
+export default function ItemDetailContainer() {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
+  const [count, setCount] = useState(0);
 
   const { helpers } = useContext(CartContext);
 
@@ -21,8 +23,14 @@ export default function Detalles() {
   };
 
   const addToCart = () => {
-    helpers.addGame(product, 1);
+    helpers.addGame(product, count);
     navigate("/tienda/cart");
+  };
+  const upCont = () => {
+    setCount(count + 1);
+  };
+  const downCont = () => {
+    if (count > 1) setCount(count - 1);
   };
 
   useEffect(() => {
@@ -74,6 +82,11 @@ export default function Detalles() {
               descripcion={product?.description}
             />
             <Iframe id={product?.ytId} />
+            <div data-id="divButtonCant">
+              <button onClick={downCont}>-</button>
+              <ItemCount count={count} />
+              <button onClick={upCont}>+</button>
+            </div>
           </section>
         </>
       )}
