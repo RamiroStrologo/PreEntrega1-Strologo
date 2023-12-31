@@ -8,6 +8,10 @@ import {
 } from "firebase/firestore";
 import { db } from "../../firebase/client";
 
+export async function getAllProducts() {
+  const prodRef = collection(db, "products");
+  const snapshot = await getDocs(prodRef);
+}
 export async function getProductsByConsole(consola) {
   const productsRef = query(
     collection(db, "products"),
@@ -51,6 +55,7 @@ export async function getProductById(gameId) {
 }
 
 const productsJs = {
+  getAllProducts,
   getProductsByConsole,
   getConsolaInfo,
   getProductById,

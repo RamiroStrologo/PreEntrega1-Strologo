@@ -8,7 +8,7 @@ export const CartProvider = ({ children }) => {
   const [updateCart, setUpdateCart] = useState(false);
 
   const getGames = (consolaId) => productsJs.getProductsByConsole(consolaId);
-
+  const getAllGames = () => productsJs.getAllProducts();
   const getConsole = (consolaId) => productsJs.getConsolaInfo(consolaId);
 
   const getGame = (gameId) => productsJs.getProductById(gameId);
@@ -37,6 +37,7 @@ export const CartProvider = ({ children }) => {
 
   const helpers = {
     getGame,
+    getAllGames,
     getGames,
     getConsole,
 

@@ -18,7 +18,7 @@ export default function CardItem({
   const navigate = useNavigate();
 
   const handleImgClick = () => {
-    if (vista == "store") navigate(`/tienda/${consola}/item/${id}`);
+    if (vista == "store") navigate(`/item/${id}`);
   };
   return (
     <div

@@ -17,9 +17,8 @@ export default function RouterPrincipal() {
         <Header />
       </CartProvider>
       <Routes>
-        <Route path="/" element={<Main />} />
         <Route
-          path="/category/:consolaId"
+          path="/"
           element={
             <CartProvider>
               <ItemListContainer />
@@ -27,7 +26,15 @@ export default function RouterPrincipal() {
           }
         />
         <Route
-          path="/tienda/:consolaId/item/:gameId"
+          path="/:consolaId"
+          element={
+            <CartProvider>
+              <ItemListContainer />
+            </CartProvider>
+          }
+        />
+        <Route
+          path="/item/:gameId"
           element={
             <CartProvider>
               <ItemDetailContainer />

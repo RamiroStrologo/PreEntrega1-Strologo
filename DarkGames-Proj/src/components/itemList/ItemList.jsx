@@ -8,19 +8,24 @@ import { useParams } from "react-router-dom";
 
 export default function ItemList() {
   const [products, setProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
   const [consolaInfo, setConsolaInfo] = useState({});
   const [loading, setLoading] = useState(true);
 
   const { helpers } = useContext(CartContext);
 
-  const { consolaId } = useParams();
-
+  const { consolaId = "ps4" } = useParams();
   useEffect(() => {
     setLoading(true);
-    Promise.all([helpers.getConsole(consolaId), helpers.getGames(consolaId)])
-      .then(([consoleResponse, GameResponse]) => {
+    Promise.all([
+      helpers.getConsole(consolaId),
+      helpers.getGames(consolaId),
+      helpers.getAllGames(),
+    ])
+      .then(([consoleResponse, gamesResponse, allGamesResponse]) => {
         setConsolaInfo(consoleResponse);
-        setProducts(GameResponse);
+        setProducts(gamesResponse);
+        setAllProducts(allGamesResponse);
       })
       .finally(() => {
         setLoading(false);

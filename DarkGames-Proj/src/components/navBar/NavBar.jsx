@@ -17,13 +17,13 @@ export default function NavBar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/category/ps4">PS4</NavLink>
+            <NavLink to="/ps4">PS4</NavLink>
           </li>
           <li>
-            <NavLink to="/category/ps3">PS3</NavLink>
+            <NavLink to="/ps3">PS3</NavLink>
           </li>
           <li>
-            <NavLink to="/category/xone">XBOX ONE</NavLink>
+            <NavLink to="/xone">XBOX ONE</NavLink>
           </li>
           <li>
             <CartWidget />
