@@ -1,12 +1,12 @@
-import Summary from "../../components/summary/Summary.jsx";
-import CardItem from "../../components/cardItem/CardItem.jsx";
-import Iframe from "../../components/iframe/Iframe.jsx";
-import Loader from "../../components/loader/Loader.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { detallesCont } from "./itemDetailContainer.module.css";
 import { CartContext } from "../../context/cartContext.jsx";
 import { useContext, useEffect, useState } from "react";
-import ItemCount from "../../components/ItemCount/ItemCount.jsx";
+import Loader from "../loader/Loader.jsx";
+import CardItem from "../cardItem/CardItem.jsx";
+import Summary from "../summary/Summary.jsx";
+import Iframe from "../iframe/Iframe.jsx";
+import ItemCount from "../itemCount/ItemCount.jsx";
 
 export default function ItemDetailContainer() {
   const [product, setProduct] = useState({});

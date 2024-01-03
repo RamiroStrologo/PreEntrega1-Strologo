@@ -1,7 +1,7 @@
 import { checkout } from "./checkout.module.css";
-import ButtonSave from "../../components/buttonSave/ButtonSave";
-import ButtonDelete from "../../components/buttonDelete/ButtonDelete";
-import Loader from "../../components/loader/Loader";
+import ButtonSave from "../buttonSave/ButtonSave";
+import ButtonDelete from "../buttonDelete/ButtonDelete";
+import Loader from "../loader/Loader";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
 import createOrder from "./checkJS";

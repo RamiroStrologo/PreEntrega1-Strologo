@@ -1,10 +1,10 @@
-import NavBar from "../../components/navBar/NavBar";
-import ItemList from "../../components/itemList/ItemList";
+import NavBar from "../navBar/NavBar";
+import ItemList from "../itemList/ItemList";
 import { tienda } from "./itemListContainer.module.css";
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../context/cartContext";
-import Loader from "../../components/loader/Loader";
+import Loader from "../loader/Loader";
 
 export default function ItemListContainer() {
   const [totalCart, setTotalCart] = useState(0);

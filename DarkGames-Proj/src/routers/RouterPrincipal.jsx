@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemListContainer from "../views/itemListContainer/ItemListContainer";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
-import ItemDetailContainer from "../views/itemDetailContainer/ItemDetailContainer";
-import Cart from "../views/Cart/Cart";
-import AboutUs from "../views/AboutUs/AboutUs";
-import Checkout from "../views/Checkout/Checkout";
 import { CartProvider } from "../context/cartContext";
+import Cart from "../components/Cart/Cart";
+import ItemListContainer from "../components/itemListContainer/ItemListContainer";
+import ItemDetailContainer from "../components/itemDetailContainer/ItemDetailContainer";
+import Checkout from "../components/Checkout/Checkout";
+import AboutUs from "../components/AboutUs/AboutUs";
 
 export default function RouterPrincipal() {
   return (

@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
-import CartItem from "../../components/cartItem/CartItem";
-import Loader from "../../components/loader/Loader";
+import CartItem from "../cartItem/CartItem";
+import Loader from "../loader/Loader";
 import { CartContext } from "../../context/cartContext";
-import ButtonSave from "../../components/buttonSave/ButtonSave";
-import ButtonDelete from "../../components/buttonDelete/ButtonDelete";
+import ButtonSave from "../buttonSave/ButtonSave";
+import ButtonDelete from "../buttonDelete/ButtonDelete";
 import { useNavigate } from "react-router-dom";
 import { cartSummary } from "./cart.module.css";
 
