@@ -3,7 +3,7 @@ import { asideNavBar } from "./navBar.module.css";
 import { NavLink } from "react-router-dom";
 import CartWidget from "../cartwidget/CartWidget";
 
-export default function NavBar() {
+export default function NavBar({ cartCant }) {
   return (
     <aside className={asideNavBar}>
       <nav>
@@ -17,16 +17,16 @@ export default function NavBar() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/ps4">PS4</NavLink>
+            <NavLink to="/category/ps4">PS4</NavLink>
           </li>
           <li>
-            <NavLink to="/ps3">PS3</NavLink>
+            <NavLink to="/category/ps3">PS3</NavLink>
           </li>
           <li>
-            <NavLink to="/xone">XBOX ONE</NavLink>
+            <NavLink to="/category/xone">XBOX ONE</NavLink>
           </li>
           <li>
-            <CartWidget />
+            <CartWidget cartCant={cartCant} />
           </li>
         </ul>
       </nav>

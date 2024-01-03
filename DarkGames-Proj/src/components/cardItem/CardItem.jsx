@@ -5,6 +5,8 @@ import {
   cartView,
 } from "./cardItem.module.css";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/cartContext.jsx";
+import { useContext } from "react";
 
 export default function CardItem({
   id,
@@ -16,9 +18,12 @@ export default function CardItem({
   vista,
 }) {
   const navigate = useNavigate();
-
+  const { setConsola } = useContext(CartContext);
   const handleImgClick = () => {
-    if (vista == "store") navigate(`/item/${id}`);
+    if (vista == "store") {
+      setConsola(consola);
+      navigate(`/item/${id}`);
+    }
   };
   return (
     <div

@@ -15,6 +15,13 @@ export default function Cart() {
   const navigate = useNavigate();
   const { helpers, updateCart, setUpdateCart } = useContext(CartContext);
 
+  const handleCheckClick = () => {
+    cart.totalItems > 0 && navigate("/tienda/cart/checkout");
+  };
+  const handleDeleteClick = () => {
+    cart.totalItems > 0 && setDelet(true);
+  };
+
   useEffect(() => {
     setLoading(true);
     helpers
@@ -44,12 +51,8 @@ export default function Cart() {
           <div className={cartSummary}>
             <span> {`Total: $${cart.totalCost}`}</span>
             <div>
-              <ButtonSave
-                onClick={() => {
-                  navigate("/tienda/cart/checkout");
-                }}
-              />
-              <ButtonDelete onClick={() => setDelet(true)} />
+              <ButtonSave onClick={handleCheckClick} />
+              <ButtonDelete onClick={handleDeleteClick} />
             </div>
           </div>
         </>

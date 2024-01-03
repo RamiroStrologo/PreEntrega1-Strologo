@@ -30,15 +30,19 @@ export async function getCart() {
   }
 }
 export async function addProduct(product) {
-  const checkProd = await checkProductInCart(product.title);
-  if (checkProd.size === 0) {
+  const productRef = query(
+    collection(db, "cart"),
+    where("title", "==", product.title)
+  );
+  const cartSnapshot = await getDocs(productRef);
+
+  if (cartSnapshot.size === 0) {
     await addDoc(collection(db, "cart"), product);
+  } else {
+    const cartDoc = cartSnapshot.docs[0];
+    const newQuantity = product.cant;
+    await updateDoc(doc(db, "cart", cartDoc.id), { cant: newQuantity });
   }
-}
-async function checkProductInCart(title) {
-  const productRef = query(collection(db, "cart"), where("title", "==", title));
-  const res = await getDocs(productRef);
-  return res;
 }
 
 export async function modifyProductCart(cardItemId, newCant) {

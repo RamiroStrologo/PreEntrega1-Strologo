@@ -6,7 +6,8 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [updateCart, setUpdateCart] = useState(false);
-
+  const [consola, setConsola] = useState({});
+  const [gamesArray, setGamesArray] = useState([]);
   const getGames = (consolaId) => productsJs.getProductsByConsole(consolaId);
   const getAllGames = () => productsJs.getAllProducts();
   const getConsole = (consolaId) => productsJs.getConsolaInfo(consolaId);
@@ -48,7 +49,17 @@ export const CartProvider = ({ children }) => {
     modifyProductCant,
   };
   return (
-    <CartContext.Provider value={{ helpers, updateCart, setUpdateCart }}>
+    <CartContext.Provider
+      value={{
+        helpers,
+        updateCart,
+        setUpdateCart,
+        setConsola,
+        consola,
+        gamesArray,
+        setGamesArray,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

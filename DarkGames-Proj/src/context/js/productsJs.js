@@ -11,6 +11,13 @@ import { db } from "../../firebase/client";
 export async function getAllProducts() {
   const prodRef = collection(db, "products");
   const snapshot = await getDocs(prodRef);
+  if (!snapshot.empty) {
+    const allGamesCol = snapshot.docs.map((docs) => ({
+      id: docs.id,
+      ...docs.data(),
+    }));
+    return allGamesCol;
+  } else return null;
 }
 export async function getProductsByConsole(consola) {
   const productsRef = query(

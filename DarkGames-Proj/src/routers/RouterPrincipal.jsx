@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemListContainer from "../views/itemListContainer/ItemListContainer";
-import Main from "../views/Home/Main";
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import ItemDetailContainer from "../views/itemDetailContainer/ItemDetailContainer";
@@ -26,7 +25,7 @@ export default function RouterPrincipal() {
           }
         />
         <Route
-          path="/:consolaId"
+          path="/category/:consolaId"
           element={
             <CartProvider>
               <ItemListContainer />
@@ -42,7 +41,7 @@ export default function RouterPrincipal() {
           }
         />
         <Route
-          path="/tienda/cart"
+          path="/cart"
           element={
             <CartProvider>
               <Cart />

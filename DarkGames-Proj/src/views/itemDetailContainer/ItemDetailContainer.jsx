@@ -13,18 +13,19 @@ export default function ItemDetailContainer() {
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(0);
 
-  const { helpers } = useContext(CartContext);
-
-  const { gameId, consolaId } = useParams();
+  const { helpers, consola } = useContext(CartContext);
+  const { gameId } = useParams();
   const navigate = useNavigate();
 
   const handleImgClick = () => {
-    navigate(`/category/${consolaId}`);
+    consola ? navigate(`/category/${consola.name}`) : navigate("/");
   };
 
   const addToCart = () => {
-    helpers.addGame(product, count);
-    navigate("/tienda/cart");
+    if (count > 0) {
+      helpers.addGame(product, count);
+      navigate("/cart");
+    }
   };
   const upCont = () => {
     setCount(count + 1);
@@ -34,16 +35,31 @@ export default function ItemDetailContainer() {
   };
 
   useEffect(() => {
-    setLoading(true);
-    helpers
-      .getGame(gameId)
-      .then((response) => {
-        setProduct(response);
-      })
-      .finally(() => {
+    const setGameDetail = async () => {
+      setLoading(true);
+      try {
+        const game = await helpers.getGame(gameId);
+        setProduct(game);
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+    setGameDetail();
   }, [gameId]);
+
+  useEffect(() => {
+    const setGameCount = async () => {
+      const cart = await helpers.getCart();
+      const foundProduct = cart.cart.find((prod) => {
+        return prod.title === product?.title;
+      });
+      if (foundProduct) {
+        const prodCant = foundProduct.cant;
+        setCount(prodCant);
+      }
+    };
+    setGameCount();
+  }, [gameId, product]);
 
   return (
     <div className={detallesCont}>
@@ -72,7 +88,7 @@ export default function ItemDetailContainer() {
               title={product?.title}
               genre={product?.genre}
               price={product?.price}
-              consola={consolaId}
+              consola={consola}
               vista={"details"}
             />
           </aside>
