@@ -96,7 +96,7 @@ export default function Checkout() {
               <ButtonSave onClick={handleConfirm} />
               <ButtonDelete
                 onClick={() => {
-                  navigate("/tienda/cart");
+                  navigate("/cart");
                 }}
               />
             </div>

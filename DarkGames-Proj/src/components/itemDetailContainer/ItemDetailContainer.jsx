@@ -2,11 +2,11 @@ import { useNavigate, useParams } from "react-router-dom";
 import { detallesCont } from "./itemDetailContainer.module.css";
 import { CartContext } from "../../context/cartContext.jsx";
 import { useContext, useEffect, useState } from "react";
-import Loader from "../loader/Loader.jsx";
-import CardItem from "../cardItem/CardItem.jsx";
-import Summary from "../summary/Summary.jsx";
-import Iframe from "../iframe/Iframe.jsx";
-import ItemCount from "../itemCount/ItemCount.jsx";
+import Loader from "../loader/Loader";
+import CardItem from "../cardItem/CardItem";
+import Summary from "../summary/Summary";
+import Iframe from "../iframe/Iframe";
+import ItemCount from "../ItemCount/ItemCount";
 
 export default function ItemDetailContainer() {
   const [product, setProduct] = useState({});

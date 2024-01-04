@@ -19,6 +19,7 @@ export const CartProvider = ({ children }) => {
   const addGame = ({ imgSrc, title, price }, cant) => {
     const productToAdd = { imgSrc, title, price, cant };
     cartJs.addProduct(productToAdd);
+    setUpdateCart(true);
   };
 
   const deleteProductCart = (cartItemId) => {
